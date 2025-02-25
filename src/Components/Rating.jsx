@@ -1,7 +1,7 @@
 import React from "react";
 
 const Rating = ({ rate }) => {
-  const currentRate = rate.toFixed(0);
+  const currentRate = parseInt(rate).toFixed(0);
 
   let lenght = 5;
 
