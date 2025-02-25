@@ -1,8 +1,10 @@
 import React from "react";
 import Rating from "./Rating";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
   product: {
+    id,
     title,
     price,
     image,
@@ -10,7 +12,10 @@ const ProductCard = ({
   },
 }) => {
   return (
-    <div className="border border-black p-5 rounded-lg flex flex-col items-start gap-3">
+    <Link
+      to={`/product-detail/${id}`}
+      className="border border-black p-5 rounded-lg flex flex-col items-start gap-3"
+    >
       <img className="h-40 hover:scale-125" src={image} alt="" />
       <p className="font-bold font-mono line-clamp-2 mb-3">{title}</p>
       <Rating rate={rate} />
@@ -20,7 +25,7 @@ const ProductCard = ({
           Add to Cart
         </button>
       </div>
-    </div>
+    </Link>
   );
 };
 
