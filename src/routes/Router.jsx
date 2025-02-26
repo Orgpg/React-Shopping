@@ -4,11 +4,13 @@ import About from "../Pages/About";
 import MyCart from "../Pages/MyCart";
 import ProductDetail from "../Pages/ProductDetail";
 import MainLayout from "../Components/MainLayout";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -32,6 +34,5 @@ const router = createBrowserRouter([
 
 export default router;
 
-
-// Dynamic Route - 
+// Dynamic Route -
 // path: "/product-detail/:productId",

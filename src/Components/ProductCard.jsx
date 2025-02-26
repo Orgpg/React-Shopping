@@ -1,6 +1,7 @@
 import React from "react";
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
+import carts from "../data/Carts";
 
 const ProductCard = ({
   product: {
@@ -21,9 +22,13 @@ const ProductCard = ({
       <Rating rate={rate} />
       <div className="flex justify-between items-end w-full">
         <p className="font-mono">${price}</p>
-        <button className="border text-xs border-black rounded px-2 py-1 hover:bg-black hover:text-white ">
-          Add to Cart
-        </button>
+        {carts.find((cart) => cart.product.id === id) ? (
+          <button className="border text-xs border-black rounded px-2 py-1 bg-black text-white">Added</button>
+        ) : (
+          <button className="border text-xs border-black rounded px-2 py-1 hover:bg-black hover:text-white ">
+            Add to Cart
+          </button>
+        )}
       </div>
     </Link>
   );
